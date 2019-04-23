@@ -140,6 +140,13 @@ public class CanvasOprationView extends View {
         Rect rect1 = new Rect(10,10,200,100);
 
         canvas.drawRect(rect1, paint_green);
+
+        /**
+         * 对于skey(float sx,float sy),sx和sy分别表示将画布在x和y方向上倾斜相应的角度对应的tan值。
+         * 当sx=1时，即将画布在x方向上旋转45度，其实就是x轴保持方向不变，y轴逆时针旋转45度。
+         * 当sy=1时，即将画布在y方向上旋转45度，其实就是y轴保持方向不变，x轴顺时针旋转45度。
+         * 当sx、sy都改变时，两者都进行相应的移动。最后一张图中，将画布往x方向旋转45端，y方向旋转60度，可见，x轴顺时针旋转了60度，y逆时针旋转了45度。
+         */
         canvas.skew(1.732f,0);//X轴倾斜60度，Y轴不变
         canvas.drawRect(rect1, paint_red);
     }
